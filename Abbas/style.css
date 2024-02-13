@@ -28,7 +28,7 @@ input {
   color: white;
   width: 45%;
   height: 80vh;
-  filter: drop-shadow(0 0 5px gray);
+  filter: drop-shadow(0 0 50px black);
 }
 .allpage {
   padding: 10px;
