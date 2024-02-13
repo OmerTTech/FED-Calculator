@@ -9,6 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: gray;
 }
 input {
   width: 100%;
@@ -21,7 +22,7 @@ input {
   font-size: 30px;
 }
 .phone {
-  border: 2px solid gray;
+  border: 3px solid white;
   border-radius: 30px;
   background-color: black;
   color: white;
@@ -47,7 +48,7 @@ input {
   padding: 15px;
 }
 .number {
-  background-color: gray;
+  background-color: #333333;
   border-radius: 50%;
   text-align: center;
   height: 55px;
