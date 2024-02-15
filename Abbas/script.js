@@ -20,6 +20,15 @@ function equ() {
     domInput.value = Number(arr[0]) * Number(domInput.value);
   } else if (operator == "/") {
     domInput.value = Number(arr[0]) / Number(domInput.value);
+  } else if (operator == "%") {
+    domInput.value = (Number(arr[0]) * Number(domInput.value)) / 100;
+  } else if (operator == "chg") {
+    domInput.value = Number(arr[0]);
+    if (Number(domInput.value) == 0) {
+      domInput.value = Number(arr[0]);
+    } else {
+      domInput.value = Number(arr[0]) * -1;
+    }
   }
   arr[0] = Number(domInput.value); // Sonucu arr'nin ilk elemanı olarak ayarla
   domInput2.value = arr[0]; // Sonucu history'e yaz
@@ -67,3 +76,19 @@ function divine() {
   operator = "/";
 }
 
+function percent() {
+  if (arr.length > 0 && domInput.value !== "") {
+    equ();
+  } else {
+    arr[0] = Number(domInput.value);
+    domInput2.value = arr[0];
+  }
+  domInput.value = "";
+  operator = "%";
+}
+
+function changer() {
+  domInput.value = "";
+  operator = "chg";
+  equ();
+}
