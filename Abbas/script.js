@@ -66,3 +66,4 @@ function divine() {
   domInput.value = "";
   operator = "/";
 }
+
