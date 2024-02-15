@@ -15,7 +15,7 @@ function equ() {
   if (operator == "+") {
     domInput.value = Number(domInput.value) + Number(arr[0]);
   } else if (operator == "-") {
-    domInput.value = Number(domInput.value) - Number(arr[1]);
+    domInput.value = Number(arr[0]) - Number(domInput.value);
   }
 }
 function sum() {
@@ -31,8 +31,10 @@ function sum() {
 
 function min() {
   arr.push(Number(domInput.value));
+  arr[0] = arr[1];
+  arr.pop();
   if (arr.length >= 2) {
-    arr[0] = Number(arr[1]) - Number(arr[1]);
+    arr[0] = Number(arr[0]) - Number(arr[1]);
     arr.pop();
   }
   domInput.value = "";
