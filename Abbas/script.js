@@ -30,8 +30,8 @@ function equ() {
       domInput.value = Number(arr[0]) * -1;
     }
   }
-  arr[0] = Number(domInput.value); // Sonucu arr'nin ilk elemanı olarak ayarla
-  domInput2.value = arr[0]; // Sonucu history'e yaz
+  arr[0] = Number(domInput.value);
+  domInput2.value = arr[0];
 }
 function sum() {
   if (arr.length > 0 && domInput.value !== "") {
