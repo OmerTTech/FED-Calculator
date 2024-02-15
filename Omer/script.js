@@ -17,25 +17,27 @@ function equ() {
   } else if (operator == "-") {
     domInput.value = Number(arr[0]) - Number(domInput.value);
   }
+  arr[0] = Number(domInput.value); // Sonucu arr'nin ilk elemanı olarak ayarla
+  domInput2.value = arr[0]; // Sonucu history'e yaz
 }
 function sum() {
-  arr.push(Number(domInput.value));
-  if (arr.length >= 2) {
-    arr[0] = Number(arr[0]) + Number(arr[1]);
-    arr.pop();
+  if (arr.length > 0 && domInput.value !== "") {
+    equ(); // Eğer arr doluysa ve yeni bir değer girildiyse, önce mevcut işlemi tamamla
+  } else {
+    arr[0] = Number(domInput.value); // İlk değeri arr'ye ekle
+    domInput2.value = arr[0]; // İlk değeri history'e yaz
   }
   domInput.value = "";
-  domInput2.value = arr;
   operator = "+";
 }
 
 function min() {
-  arr.push(Number(domInput.value));
-  if (arr.length >= 2) {
-    arr[0] = Number(arr[0]) - Number(arr[1]);
-    arr.pop();
+  if (arr.length > 0 && domInput.value !== "") {
+    equ(); // Eğer arr doluysa ve yeni bir değer girildiyse, önce mevcut işlemi tamamla
+  } else {
+    arr[0] = Number(domInput.value); // İlk değeri arr'ye ekle
+    domInput2.value = arr[0]; // İlk değeri history'e yaz
   }
   domInput.value = "";
-  domInput2.value = arr;
   operator = "-";
 }
