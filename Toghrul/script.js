@@ -14,27 +14,24 @@ function del() {
 function equ() {
   if (operator == "+") {
     domInput.value = Number(arr[0]) + Number(domInput.value);
-    operator = ""
+    operator = "";
   } else if (operator == "-") {
     domInput.value = Number(arr[0]) - Number(domInput.value);
-    operator = ""
+    operator = "";
   } else if (operator == "*") {
     domInput.value = Number(arr[0]) * Number(domInput.value);
-    operator = ""
+    operator = "";
   } else if (operator == "/") {
     domInput.value = Number(arr[0]) / Number(domInput.value);
-    operator = ""
+    operator = "";
   } else if (operator == "%") {
     domInput.value = (Number(arr[0]) * Number(domInput.value)) / 100;
-    operator = ""
+    operator = "";
   } else if (operator == "chg") {
-    domInput.value = Number(arr[0]);
-    if (Number(domInput.value) == 0) {
-      domInput.value = Number(arr[0]);
-    } else {
-      domInput.value = Number(arr[0]) * -1;
+    if (Number(domInput.value) != 0) {
+      domInput.value = Number(domInput.value) * -1;
     }
-    operator = ""
+    operator = "";
   }
   arr[0] = Number(domInput.value);
   domInput2.value = arr[0];
@@ -94,17 +91,47 @@ function percent() {
 }
 
 function changer() {
-  domInput.value = "";
   operator = "chg";
   equ();
 }
 
-let key = addEventListener("keypress", function(event){
-  event
-  console.log(typeof Number(event.key));
-
-if (typeof event.key == "number" ) {
-  num(eval(event.key))
-}
-})
-//https://prod.liveshare.vsengsaas.visualstudio.com/join?37149FEE9FDA53972EA96B8C3D963E3A8C0C
+let key = addEventListener("keydown", function (event) {
+  console.log(event.key)
+  if((event.key*1) == event.key){
+    num(Number(event.key))
+  }
+  switch (event.key) {
+    case ".":
+      num(".");
+      break;
+    case "%":
+      percent();
+      break;
+    case "/":
+      divine();
+      break;
+    case "*":
+      multi();
+      break;
+    case "-":
+      sub();
+      break;
+    case "+":
+      sum();
+      break;
+    case "=":
+    case "Enter":
+      equ();
+      break;
+    case "`":
+      changer();
+      break;
+    case "Backspace":
+      case "Delete":  
+      del();
+      break;
+    default:
+      console.log("Eded qeyd edin");
+      break;
+  }
+});
