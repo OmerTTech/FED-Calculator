@@ -45,24 +45,3 @@ function sub() {
   domInput.value = "";
   operator = "-";
 }
-
-function multi() {
-  if (arr.length > 0 && domInput.value !== "") {
-    equ();
-  } else {
-    arr[0] = Number(domInput.value);
-    domInput2.value = arr[0];
-  }
-  domInput.value = "";
-  operator = "*";
-}
-function divine() {
-  if (arr.length > 0 && domInput.value !== "") {
-    equ();
-  } else {
-    arr[0] = Number(domInput.value);
-    domInput2.value = arr[0];
-  }
-  domInput.value = "";
-  operator = "/";
-}
