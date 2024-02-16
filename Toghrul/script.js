@@ -13,31 +13,56 @@ function del() {
 }
 function equ() {
   if (operator == "+") {
-    domInput.value = Number(domInput.value) + Number(arr[0]);
+    domInput.value = Number(arr[0]) + Number(domInput.value);
   } else if (operator == "-") {
     domInput.value = Number(arr[0]) - Number(domInput.value);
+  } else if (operator == "*") {
+    domInput.value = Number(arr[0]) * Number(domInput.value);
+  } else if (operator == "/") {
+    domInput.value = Number(arr[0]) / Number(domInput.value);
   }
+  arr[0] = Number(domInput.value); // Sonucu arr'nin ilk elemanı olarak ayarla
+  domInput2.value = arr[0]; // Sonucu history'e yaz
 }
 function sum() {
-  arr.push(Number(domInput.value));
-  if (arr.length >= 2) {
-    arr[0] = Number(arr[0]) + Number(arr[1]);
-    arr.pop();
+  if (arr.length > 0 && domInput.value !== "") {
+    equ();
+  } else {
+    arr[0] = Number(domInput.value);
+    domInput2.value = arr[0];
   }
   domInput.value = "";
-  domInput2.value = arr;
   operator = "+";
 }
 
-function min() {
-  arr.push(Number(domInput.value));
-  arr[0] = arr[1];
-  arr.pop();
-  if (arr.length >= 2) {
-    arr[0] = Number(arr[0]) - Number(arr[1]);
-    arr.pop();
+function sub() {
+  if (arr.length > 0 && domInput.value !== "") {
+    equ();
+  } else {
+    arr[0] = Number(domInput.value);
+    domInput2.value = arr[0];
   }
   domInput.value = "";
-  domInput2.value = arr;
   operator = "-";
+}
+
+function multi() {
+  if (arr.length > 0 && domInput.value !== "") {
+    equ();
+  } else {
+    arr[0] = Number(domInput.value);
+    domInput2.value = arr[0];
+  }
+  domInput.value = "";
+  operator = "*";
+}
+function divine() {
+  if (arr.length > 0 && domInput.value !== "") {
+    equ();
+  } else {
+    arr[0] = Number(domInput.value);
+    domInput2.value = arr[0];
+  }
+  domInput.value = "";
+  operator = "/";
 }
