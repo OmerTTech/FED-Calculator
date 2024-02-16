@@ -14,15 +14,30 @@ function del() {
 function equ() {
   if (operator == "+") {
     domInput.value = Number(arr[0]) + Number(domInput.value);
+    operator = ""
   } else if (operator == "-") {
     domInput.value = Number(arr[0]) - Number(domInput.value);
+    operator = ""
   } else if (operator == "*") {
     domInput.value = Number(arr[0]) * Number(domInput.value);
+    operator = ""
   } else if (operator == "/") {
     domInput.value = Number(arr[0]) / Number(domInput.value);
+    operator = ""
+  } else if (operator == "%") {
+    domInput.value = (Number(arr[0]) * Number(domInput.value)) / 100;
+    operator = ""
+  } else if (operator == "chg") {
+    domInput.value = Number(arr[0]);
+    if (Number(domInput.value) == 0) {
+      domInput.value = Number(arr[0]);
+    } else {
+      domInput.value = Number(arr[0]) * -1;
+    }
+    operator = ""
   }
-  arr[0] = Number(domInput.value); // Sonucu arr'nin ilk elemanı olarak ayarla
-  domInput2.value = arr[0]; // Sonucu history'e yaz
+  arr[0] = Number(domInput.value);
+  domInput2.value = arr[0];
 }
 function sum() {
   if (arr.length > 0 && domInput.value !== "") {
@@ -45,6 +60,51 @@ function sub() {
   domInput.value = "";
   operator = "-";
 }
-// https://prod.liveshare.vsengsaas.visualstudio.com/join?AED4F30CE5355F63A353CB0C322533562E5B
 
-//https://prod.liveshare.vsengsaas.visualstudio.com/join?1EF6D5780826CBECCCC05A6912BD7F1CA3A0
+function multi() {
+  if (arr.length > 0 && domInput.value !== "") {
+    equ();
+  } else {
+    arr[0] = Number(domInput.value);
+    domInput2.value = arr[0];
+  }
+  domInput.value = "";
+  operator = "*";
+}
+function divine() {
+  if (arr.length > 0 && domInput.value !== "") {
+    equ();
+  } else {
+    arr[0] = Number(domInput.value);
+    domInput2.value = arr[0];
+  }
+  domInput.value = "";
+  operator = "/";
+}
+
+function percent() {
+  if (arr.length > 0 && domInput.value !== "") {
+    equ();
+  } else {
+    arr[0] = Number(domInput.value);
+    domInput2.value = arr[0];
+  }
+  domInput.value = "";
+  operator = "%";
+}
+
+function changer() {
+  domInput.value = "";
+  operator = "chg";
+  equ();
+}
+
+let key = addEventListener("keypress", function(event){
+  event
+  console.log(typeof Number(event.key));
+
+if (typeof event.key == "number" ) {
+  num(eval(event.key))
+}
+})
+//https://prod.liveshare.vsengsaas.visualstudio.com/join?37149FEE9FDA53972EA96B8C3D963E3A8C0C

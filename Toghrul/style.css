@@ -46,6 +46,11 @@ input{
     color: #fff;
     font-weight: 100;
 }
+
+#history{
+  
+    font-size: 15px;
+}
 .footer {
   height: 350px;
   display: grid;
@@ -64,6 +69,8 @@ input{
   line-height: 55px;
   font-size: 25px;
   color: #fff;
+  cursor: pointer;
+  user-select: none;
 }
 
 .first {

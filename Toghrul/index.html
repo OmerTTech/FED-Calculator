@@ -10,28 +10,29 @@
     <div class="phone">
    <div class="phone-border">
         <div class="header">
+            <input type="text" maxlength="10" id="history">
             <input type="text" maxlength="10" id="calc">
         </div>
         <div class="footer">
-            <div class="number first">AC</div>
-            <div class="number first">+/-</div>
-            <div class="number first">%</div>
-            <div class="number orange">/</div>
-            <div class="number">7</div>
-            <div class="number">8</div>
-            <div class="number">9</div>
-            <div class="number orange">X</div>
-            <div class="number">4</div>
-            <div class="number">5</div>
-            <div class="number">6</div>
-            <div class="number orange" >-</div>
-            <div class="number">1</div>
-            <div class="number">2</div>
-            <div class="number">3</div>
-            <div class="number orange">+</div>
-            <div class="number zero">0</div>
-            <div class="number">.</div>
-            <div class="number orange">=</div>
+            <div onclick="del()" class="number first">AC</div>
+            <div onclick="changer()" class="number first">+/-</div>
+            <div onclick="percent()" class="number first">%</div>
+            <div onclick="divine()" class="number orange">/</div>
+            <div onclick="num(7)" class="number">7</div>
+            <div onclick="num(8)" class="number">8</div>
+            <div onclick="num(9)" class="number">9</div>
+            <div onclick="multi()" class="number orange">X</div>
+            <div onclick="num(4)" class="number">4</div>
+            <div onclick="num(5)" class="number">5</div>
+            <div onclick="num(6)" class="number">6</div>
+            <div onclick="sub()" class="number orange" >-</div>
+            <div onclick="num(1)" class="number">1</div>
+            <div onclick="num(2)" class="number">2</div>
+            <div onclick="num(3)" class="number">3</div>
+            <div onclick="sum()" class="number orange">+</div>
+            <div onclick="num(0)" class="number zero">0</div>
+            <div onclick="num('.')" class="number">.</div>
+            <div onclick="equ()" class="number orange">=</div>
         </div>
     </div>
 
