@@ -95,10 +95,9 @@ function changer() {
   equ();
 }
 
-let key = addEventListener("keydown", function (event) {
-  console.log(event.key)
-  if((event.key*1) == event.key){
-    num(Number(event.key))
+let key = document.addEventListener("keydown", function (event) {
+  if (event.key * 1 == event.key) {
+    num(event.key);
   }
   switch (event.key) {
     case ".":
@@ -127,7 +126,7 @@ let key = addEventListener("keydown", function (event) {
       changer();
       break;
     case "Backspace":
-      case "Delete":  
+    case "Delete":
       del();
       break;
     default:
