@@ -126,6 +126,10 @@ let key = document.addEventListener("keydown", function (event) {
       changer();
       break;
     case "Backspace":
+      let delArray = domInput.value.split("")
+      delArray.pop()
+      domInput.value = delArray.join("")
+      break;
     case "Delete":
       del();
       break;
