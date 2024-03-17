@@ -130,6 +130,7 @@ let key = document.addEventListener("keydown", function (event) {
     case "`":
       changer();
       break;
+    case "Backspace":
     case "Delete":
       del();
       break;
