@@ -11,6 +11,11 @@ function del() {
   domInput2.value = "";
   arr = [];
 }
+function backspace() {
+  let arr1 = domInput.value.split("");
+      arr1.pop();
+      domInput.value = arr1.join("");
+}
 function equ() {
   if (operator == "+") {
     domInput.value = Number(arr[0]) + Number(domInput.value);
@@ -125,9 +130,11 @@ let key = document.addEventListener("keydown", function (event) {
     case "`":
       changer();
       break;
-    case "Backspace":
     case "Delete":
       del();
+      break;
+    case "Backspace":
+      backspace()
       break;
     default:
       console.log("Eded qeyd edin");
